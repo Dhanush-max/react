@@ -1,0 +1,22 @@
+.counter-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .counter-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .counter-btn:hover {
+    background-color: #0056b3;
+  }
+  
