@@ -1,13 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Counter from './Counter';
 import './App.css';
-
+import Counter from './FetchHtmlButton';
 
 function App() {
   return (
-    <div>
-      <Counter />
+    <div className="App">
+     <Counter/>
     </div>
   );
 }
