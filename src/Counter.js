@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
-import './Counter.css'; // Import the CSS file
 
-function Counter() {
-  const [count, setCount] = useState(0);
+const Counter = () => {
+  const [content, setContent] = useState('');
 
-  const increment = () => {
-    setCount(prevCount => prevCount + 1);
+  const fetchHtmlContent = () => {
+    fetch('https://react-orpin-ten.vercel.app/')
+      .then(response => response.text())
+      .then(htmlContent => {
+        setContent(htmlContent);
+      })
+      .catch(error => console.error('Error fetching HTML:', error));
   };
 
   return (
-    <div className="counter-container">
-      <button className="counter-btn" onClick={increment}>
-        {count}
+    <div>
+      <button onClick={fetchHtmlContent} style={buttonStyle}>
+        Fetch HTML Content
       </button>
+      <div id="target-element" dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
-}
+};
+
+const buttonStyle = {
+  position: 'fixed',
+  bottom: '20px',
+  right: '20px',
+  padding: '10px 20px',
+  borderRadius: '50%',
+  backgroundColor: '#007bff',
+  color: 'white',
+  border: 'none',
+  cursor: 'pointer',
+};
 
 export default Counter;
